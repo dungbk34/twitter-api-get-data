@@ -29,12 +29,11 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # >>>>>>>>>>>>>>>>>>>>>>>> code begin >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-# f = open('home_timeline.txt', 'w+')
+f = open('home_timeline.txt', 'w+')
 
-# for status in tw.Cursor(api.home_timeline).items(1):
-#     # Process a single status
-# 	json.dump(status._json, f)
-# f.close()
+for status in tw.Cursor(api.home_timeline).items(1):
+	f.write(str(status))
+f.close()
 #  >>>>>>>>>>>>>>>>>>>>>>>>>> end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ##############################################################
@@ -57,9 +56,8 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('user_timeline.txt', 'w+')
 
 # for status in api.user_timeline('@Cristiano', count=1):
-#     # Process a single status
-# 	json.dump(status._json, f)
-
+	# f.write(str(status))
+#
 # f.close()
 
 
@@ -86,8 +84,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # for status in api.statuses_lookup(id_ = [1179142471542067201]):
 #     # Process a single status
-# 	json.dump(status._json, f)
-
+# 		f.write(str(status))
 # f.close()
 
 
@@ -109,8 +106,8 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('retweets_of_me.txt', 'w+')
 
 # for status in api.retweets_of_me(count = 1):
-#     # Process a single status
-# 	json.dump(status._json, f)
+# 	f.write(str(status))
+
 
 # f.close()
 #  >>>>>>>>>>>>>>>>>>>>>>>>>> end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -132,9 +129,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('mentions_timeline.txt', 'w+')
 
 # for status in api.mentions_timeline(count = 1):
-#     # Process a single status
-# 	json.dump(status._json, f)
-
+#	f.write(str(status))
 # f.close()
 
 #  >>>>>>>>>>>>>>>>>>>>>>>>>> end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -163,7 +158,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # status = api.get_status(id = 1179332900715667457)
 # # Process a single status
-# json.dump(status._json, f)
+#	f.write(str(status))
 
 # f.close()
 #  >>>>>>>>>>>>>>>>>>>>>>>>>> end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -187,7 +182,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # retweeters = api.retweeters(id = 1179332900715667457)
 # # Process a single status
-# json.dump(retweeters, f)
+# 	f.write(str(status))
 
 # f.close()
 #  >>>>>>>>>>>>>>>>>>>>>>>>>> end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -210,7 +205,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # for status in api.retweets(id = 1179332900715667457,count = 1):
 #     # Process a single status
-# 	json.dump(status._json, f)
+#	f.write(str(status))
 
 # f.close()
 
@@ -238,7 +233,8 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('get_user.txt', 'w+')
 
 # user = api.get_user('@Cristiano')
-# json.dump(user._json,f)
+# 	f.write(str(user))
+
 
 # f.close()
 
@@ -262,7 +258,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('friends.txt', 'w+')
 
 # for user in api.friends('@Cristiano', count = 5):
-#   json.dump(user._json,f)
+#   f.write(str(user))
 
 # f.close()
 #
@@ -286,7 +282,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('followers.txt', 'w+')
 
 # for user in api.followers('@Cristiano', count = 5):
-#   json.dump(user._json,f)
+#   f.write(str(user)))
 
 # f.close()
 
@@ -317,7 +313,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('lookup_users.txt', 'w+')
 
 # for user in api.lookup_users(['@BarackObama', '@realDonaldTrump']):
-#       json.dump(user._json,f)
+#       f.write(str(user))
 
 # f.close()
 
@@ -343,7 +339,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('search_users.txt', 'w+')
 
 # for user in api.search_users(q = 'cristiano', count  = 1):
-#       json.dump(user._json,f)
+#       f.write(str(user))
 
 # f.close()
 
@@ -370,7 +366,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('show_friendship.txt', 'w+')
 
 # friendship = api.show_friendship(source_screen_name = '@dungbk6', target_screen_name = '@Snon28281023')
-# print(friendship)
+# f.write(str(friendship))
 
 # f.close()
 
@@ -395,7 +391,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('friends_ids.txt', 'w+')
 
 # friends_ids = api.friends_ids(screen_name = '@Cristiano')
-# json.dump(friends_ids, f)
+# f.write(str(friends_ids))
 
 # f.close()
 
@@ -419,7 +415,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 # f = open('followers_ids.txt', 'w+')
 
 # followers_ids = api.followers_ids(screen_name = '@Cristiano')
-# json.dump(followers_ids, f)
+# f.write(str(followers_ids))
 
 # f.close()
 
